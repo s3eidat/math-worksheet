@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self'; media-src 'self' data: blob:; connect-src 'self' data: blob:; worker-src 'self' blob:; manifest-src 'self'; form-action 'none'; base-uri 'none'; object-src 'none'">
+<meta name="referrer" content="no-referrer">
+<title>Math Worksheet — Free Printable Maths Worksheets with Answer Keys | S3eidat Tools</title>
+<meta name="description" content="Printable addition, subtraction, multiplication and division worksheets with answer keys. Choose ranges, carrying, layout and Arabic-Indic digits; reprint any sheet from its seed. Free and private.">
+<meta property="og:title" content="Math Worksheet — free printable maths practice">
+<meta property="og:description" content="Arithmetic worksheets with answer keys, A4 or Letter. Runs 100% in your browser.">
+<link rel="icon" href="kit/icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="kit/kit.css">
+<link rel="stylesheet" href="app.css">
+<script src="kit/kit.js"></script>
+<!--s3:seo-->
+<link rel="canonical" href="https://s3eidat.github.io/math-worksheet/">
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#0d0f12">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="S3eidat Tools">
+<meta property="og:url" content="https://s3eidat.github.io/math-worksheet/">
+<meta property="og:image" content="https://s3eidat.github.io/math-worksheet/screenshot.png">
+<meta property="og:image:width" content="1280"><meta property="og:image:height" content="800">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Math Worksheet — Printable maths practice with answer keys">
+<meta name="twitter:description" content="Printable maths practice with answer keys. Free, private and runs 100% in your browser: no sign-up, no uploads.">
+<meta name="twitter:image" content="https://s3eidat.github.io/math-worksheet/screenshot.png">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Math Worksheet", "url": "https://s3eidat.github.io/math-worksheet/", "description": "Printable maths practice with answer keys. Free, private and runs 100% in your browser: no sign-up, no uploads.", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any (web browser)", "isAccessibleForFree": true, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "image": "https://s3eidat.github.io/math-worksheet/screenshot.png", "author": {"@type": "Person", "name": "s3eidat", "url": "https://github.com/s3eidat"}}</script>
+<!--/s3:seo-->
+</head>
+<body data-tool="math-worksheet">
+<main class="s3-main">
+  <section class="s3-hero no-print">
+    <h1>Math Worksheet</h1>
+    <p>Printable arithmetic practice with an answer key on page two. Pick the operations and number ranges, control carrying and borrowing, and reprint the exact same sheet any time from its seed.</p>
+  </section>
+
+  <div class="mw-grid">
+    <section class="card stack no-print" id="settings">
+      <h2>Settings</h2>
+      <div class="field">
+        <span>Operations</span>
+        <div class="mw-ops" id="ops" role="group" aria-label="Operations">
+          <label class="mw-op"><input type="checkbox" value="add" checked><span>+</span><small>Add</small></label>
+          <label class="mw-op"><input type="checkbox" value="sub"><span>−</span><small>Subtract</small></label>
+          <label class="mw-op"><input type="checkbox" value="mul"><span>×</span><small>Multiply</small></label>
+          <label class="mw-op"><input type="checkbox" value="div"><span>÷</span><small>Divide</small></label>
+        </div>
+      </div>
+
+      <div class="field">
+        <span>Quick ranges</span>
+        <div class="row mw-presets" id="presets">
+          <button class="btn small" type="button" data-p="1,1">1-digit</button>
+          <button class="btn small" type="button" data-p="2,1">2 by 1</button>
+          <button class="btn small" type="button" data-p="2,2">2-digit</button>
+          <button class="btn small" type="button" data-p="3,2">3 by 2</button>
+          <button class="btn small" type="button" data-p="3,3">3-digit</button>
+          <button class="btn small" type="button" data-p="t,t">Times tables</button>
+        </div>
+      </div>
+      <div class="grid-2 mw-ranges">
+        <div class="field"><span>First number</span>
+          <div class="row nowrap"><input class="input" id="aMin" inputmode="numeric" aria-label="First number minimum"><span class="faint">to</span><input class="input" id="aMax" inputmode="numeric" aria-label="First number maximum"></div>
+        </div>
+        <div class="field"><span>Second number</span>
+          <div class="row nowrap"><input class="input" id="bMin" inputmode="numeric" aria-label="Second number minimum"><span class="faint">to</span><input class="input" id="bMax" inputmode="numeric" aria-label="Second number maximum"></div>
+        </div>
+      </div>
+      <p class="faint mw-p">For division the first number is the dividend and the second the divisor.</p>
+
+      <label class="field"><span>Carrying and borrowing <span class="faint">(+ and −)</span></span>
+        <select class="select" id="regroup">
+          <option value="any">Any</option>
+          <option value="none">None (no carrying or borrowing)</option>
+          <option value="need">Always (every problem regroups)</option>
+        </select>
+      </label>
+      <label class="check"><input type="checkbox" id="noNeg" checked> No negative answers</label>
+      <label class="check"><input type="checkbox" id="wholeDiv" checked> Division has whole-number answers (no remainders)</label>
+
+      <div class="grid-2">
+        <label class="field">Problems<input class="input" id="count" type="number" min="1" max="120" value="20"></label>
+        <label class="field">Columns<input class="input" id="cols" type="number" min="1" max="6" value="4"></label>
+      </div>
+      <div class="field"><span>Layout</span>
+        <div class="seg" id="layout" role="group" aria-label="Layout">
+          <button type="button" data-v="v" aria-pressed="true">Vertical</button>
+          <button type="button" data-v="h" aria-pressed="false">Horizontal</button>
+        </div>
+      </div>
+      <div class="field"><span>Digits and labels</span>
+        <div class="seg" id="digits" role="group" aria-label="Digits">
+          <button type="button" data-v="en" aria-pressed="true">123 · English</button>
+          <button type="button" data-v="ar" aria-pressed="false">١٢٣ · العربية</button>
+        </div>
+      </div>
+      <label class="field">Title<input class="input" id="title" dir="auto" autocomplete="off" placeholder="Addition practice"></label>
+      <label class="check"><input type="checkbox" id="nameLine" checked> Name and date line</label>
+      <label class="check"><input type="checkbox" id="key" checked> Answer key on page 2</label>
+      <div class="grid-2">
+        <div class="field"><span>Paper</span>
+          <div class="seg" id="paper" role="group" aria-label="Paper size">
+            <button type="button" data-v="A4" aria-pressed="true">A4</button>
+            <button type="button" data-v="Letter" aria-pressed="false">Letter</button>
+          </div>
+        </div>
+        <label class="field"><span>Seed <span class="faint">(same seed = same sheet)</span></span>
+          <div class="row nowrap"><input class="input mono" id="seed" autocomplete="off" spellcheck="false"><button class="btn icon" type="button" id="reseed" aria-label="New random seed" title="New sheet"><svg class="i"><use href="#i-refresh"/></svg></button></div>
+        </label>
+      </div>
+      <p class="faint mw-p" id="warn" role="status"></p>
+    </section>
+
+    <section class="mw-sheets">
+      <div class="row between no-print mw-actions">
+        <div class="seg" id="view" role="group" aria-label="Page">
+          <button type="button" data-v="sheet" aria-pressed="true">Worksheet</button>
+          <button type="button" data-v="key" aria-pressed="false">Answer key</button>
+        </div>
+        <div class="row">
+          <button class="btn" type="button" id="new"><svg class="i"><use href="#i-refresh"/></svg>New sheet</button>
+          <button class="btn primary" type="button" id="print"><svg class="i"><use href="#i-file"/></svg>Print</button>
+        </div>
+      </div>
+      <div id="pages"></div>
+    </section>
+  </div>
+</main>
+<script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+.mw-grid { display: grid; grid-template-columns: minmax(0, 340px) minmax(0, 1fr); gap: 14px; align-items: start; }
+@media (max-width: 900px) { .mw-grid { grid-template-columns: minmax(0, 1fr); } }
+.mw-p { margin: -4px 0 0; }
+#warn:empty { display: none; }
+#warn { color: var(--warn); margin: 0; }
+.row.nowrap { flex-wrap: nowrap; }
+.mw-ranges .input { min-width: 0; }
+div.field { display: grid; gap: 6px; font-size: 12.5px; font-weight: 600; color: var(--text-2); }
+
+.mw-ops { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 6px; }
+.mw-op { position: relative; display: grid; justify-items: center; gap: 0; padding: 8px 4px 6px; border-radius: 10px; cursor: pointer;
+  background: var(--surface-2); border: 1px solid var(--line); transition: border-color var(--dur), background var(--dur); }
+.mw-op input { position: absolute; opacity: 0; pointer-events: none; }
+.mw-op span { font-size: 22px; font-weight: 700; line-height: 1.1; color: var(--text-2); }
+.mw-op small { font-size: 11px; color: var(--text-3); font-weight: 600; }
+.mw-op:has(input:checked) { border-color: var(--accent); background: var(--accent-soft); }
+.mw-op:has(input:checked) span { color: var(--accent); }
+.mw-op:has(input:focus-visible) { outline: 2px solid var(--accent); outline-offset: 2px; }
+.mw-presets { gap: 6px; }
+
+.mw-sheets { display: grid; gap: 12px; min-width: 0; }
+.mw-actions { gap: 10px; }
+
+/* ---------- the paper ---------- */
+.ws-page {
+  container-type: inline-size; position: relative;
+  background: #ffffff; color: #111111; border-radius: 6px; box-shadow: 0 18px 50px -20px rgba(0,0,0,.6), 0 0 0 1px var(--line);
+  padding: 6cqw 6.5cqw 8cqw; aspect-ratio: 210 / 297; display: flex; flex-direction: column;
+  font-family: Arial, Helvetica, "Noto Sans Arabic", Tahoma, sans-serif;
+}
+.ws-page.ws-letter { aspect-ratio: 8.5 / 11; }
+.ws-page.is-off { display: none; }
+.ws-head { display: grid; gap: 3cqw; margin-bottom: 4cqw; }
+.ws-title { margin: 0; font-size: 4.4cqw; font-weight: 700; letter-spacing: -.01em; color: #111111; }
+.ws-lines { display: flex; gap: 3cqw; font-size: 2.3cqw; color: #333333; }
+.ws-lines span { display: flex; align-items: flex-end; gap: 1cqw; flex: 1.4; white-space: nowrap; }
+.ws-lines span.ws-score { flex: 1; }
+.ws-lines i { flex: 1; border-bottom: 1px solid #555555; min-width: 6cqw; height: 1.2em; }
+
+.ws-grid { display: grid; grid-template-columns: repeat(var(--cols), minmax(0, 1fr)); font-size: var(--fs); column-gap: 3cqw; }
+.ws-grid.ws-v { row-gap: 5.5cqw; }
+.ws-grid.ws-h { row-gap: 4cqw; }
+.ws-p { display: flex; gap: .5em; align-items: flex-start; font-variant-numeric: tabular-nums; break-inside: avoid; }
+.ws-n { font-size: .52em; color: #777777; padding-top: .25em; min-width: 1.6em; }
+.ws-stack { display: grid; justify-items: end; line-height: 1.25; font-weight: 500; }
+.ws-stack .ws-b { display: flex; gap: .45em; min-width: 100%; justify-content: space-between; border-bottom: 2px solid #111111; padding-bottom: .05em; }
+.ws-stack .ws-b i { font-style: normal; }
+.ws-ans { min-height: 1.3em; padding-top: .1em; }
+.ws-h .ws-expr { white-space: nowrap; }
+.ws-blank { display: inline-block; min-width: 3em; border-bottom: 1px solid #555555; text-align: center; }
+.is-ans { color: #b3261e; font-weight: 700; }
+.ws-blank.is-ans { border-bottom-color: transparent; }
+
+.ws-ld { display: grid; grid-template-columns: auto auto; grid-template-areas: ". q" "dv dd"; line-height: 1.25; font-weight: 500; }
+.ws-ld .ws-q { grid-area: q; text-align: right; min-height: 1.25em; padding-right: .2em; }
+.ws-ld .ws-dv { grid-area: dv; padding-right: .25em; }
+.ws-ld .ws-dd { grid-area: dd; border-top: 2px solid #111111; border-left: 2px solid #111111; border-top-left-radius: .5em; padding: 0 .25em 0 .35em; }
+.ws-foot { margin-top: auto; padding-top: 4cqw; font-size: 1.6cqw; color: #999999; text-align: end; }
+
+@media print {
+  .s3-main { padding: 0; max-width: none; }
+  .mw-grid { display: block; }
+  .ws-page, .ws-page.is-off { display: flex; box-shadow: none; border-radius: 0; padding: 0; aspect-ratio: auto; min-height: 0; }
+  .ws-page + .ws-page { break-before: page; }
+  .ws-foot { padding-top: 6cqw; }
+  #pages { display: block; }
+}
